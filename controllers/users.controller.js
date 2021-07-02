@@ -23,10 +23,10 @@ const usersController = {
 
 
 const saveUser = (user)  => {
-  const usersJson = fs.readFileSync("/home/ubuntu/digitalHouse/colearning-session/data/users.json", 'utf8')
+  const usersJson = fs.readFileSync("./data/users.json", 'utf8')
   const users = JSON.parse(usersJson)
   users.push(user)
-  fs.writeFileSync("/home/ubuntu/digitalHouse/colearning-session/data/users.json", JSON.stringify(users))
+  fs.writeFileSync("./data/users.json", JSON.stringify(users))
   return users;
 }
 
