@@ -19,6 +19,9 @@
       name="password" 
       placeholder="Informe sua senha" />
     <button type="submit">Login</button>
+    <% if(erro) { %>
+        <span> <%= erro %></span>
+      <% } %> 
   </form>
 </body>
 </html>

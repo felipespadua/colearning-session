@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <form method="POST" action="/users/cadastro">
-        <label>E-mail</label>
-        <input type="email" name="email" placeholder="Informe seu e-mail" />
-        <label>Senha</label>
-        <input type="password" name="password" placeholder="Informe sua senha" />
-        <label>Repita a Senha</label>
-        <input type="password" name="retype_password" placeholder="Informe sua senha novamente" />
-        <label>Nome:</label>
-        <input type="text" name="nome" required />
-        <label>Idade:</label>
-        <input type="text" name="idade" required />
-        <label>Sexo:</label>
-        <input type="text" name="sexo" required />
-        <label>Endereço:</label>
-        <input type="text" name="endereco" required />
-        <button type="submit">Criar usuário</button>
-      </form>      
-</body>
+      <label>E-mail</label>
+      <input type="email" name="email" value="<%=body?.email%>"  placeholder="Informe seu e-mail" />
+      <% if(errors && errors.email) { %>
+      <span> <%=errors.email.msg %></span>
+      <% } %>
+      <label>Senha</label>
+      <input type="password" name="password" placeholder="Informe sua senha" />
+      <label>Repita a Senha</label>
+      <input
+        type="password"
+        name="retype_password"
+        placeholder="Informe sua senha novamente"
+      />
+      <% if(errors && errors.password) { %>
+      <span> <%=errors.password.msg %></span>
+      <% } %>
+      <label>Nome:</label>
+      <input type="text" name="nome" required />
+      <label>Idade:</label>
+      <input type="text" name="idade" required />
+      <label>Sexo:</label>
+      <input type="text" name="sexo" required />
+      <label>Endereço:</label>
+      <input type="text" name="endereco" required />
+      <button type="submit">Criar usuário</button>
+    </form>
+  </body>
 </html>
