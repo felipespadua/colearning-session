@@ -1,0 +1,17 @@
+<h1>Tabela de Usuários</h1>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Idade</th>
+    <th>Sexo</th>
+    <th>Endereço</th>
+  </tr>
+  <% users.forEach(user => { %>
+  <tr>
+    <td><%= user.nome %></td>
+    <td><%= user.idade %></td>
+    <td><%= user.sexo %></td>
+    <td><%= user.endereco %></td>
+  </tr>
+  <% }) %>
+</table>
