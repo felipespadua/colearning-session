@@ -7,32 +7,29 @@
     <title>Document</title>
   </head>
   <body>
-    <form method="POST" action="/users/cadastro">
+    <form method="POST" action="/users/<%= user.id %>?_method=PUT">
       <label>E-mail</label>
-      <input type="email" name="email" value="<%=body?.email%>"  placeholder="Informe seu e-mail" />
+      <input type="email" name="email" value="<%=user?.email%>"  placeholder="Informe seu e-mail" />
       <% if(errors && errors.email) { %>
       <span> <%=errors.email.msg %></span>
       <% } %>
       <label>Senha</label>
       <input type="password" name="password" placeholder="Informe sua senha" />
-      <label>Repita a Senha</label>
-      <input
-        type="password"
-        name="retype_password"
-        placeholder="Informe sua senha novamente"
-      />
       <% if(errors && errors.password) { %>
       <span> <%=errors.password.msg %></span>
       <% } %>
       <label>Nome:</label>
-      <input type="text" name="nome" required />
+      <input type="text" name="nome" value="<%=user?.nome%>" required />
       <label>Idade:</label>
-      <input type="text" name="idade" required />
+      <input type="text" name="idade" value="<%=user?.idade%>"  required />
       <label>Sexo:</label>
-      <input type="text" name="sexo" required />
+      <input type="text" name="sexo" value="<%=user?.sexo%>"  required />
       <label>Endereço:</label>
-      <input type="text" name="endereco" required />
-      <button type="submit">Criar usuário</button>
+      <input type="text" name="endereco" value="<%=user?.endereco%>" required />
+      <button type="submit">Atualizar usuário</button>
     </form>
+    <form method="POST" action="/users/<%= user.id %>?_method=DELETE">
+        <button type="submit">Excluir usuário</button>
+      </form>
   </body>
 </html>

@@ -5,6 +5,7 @@
     <th>Idade</th>
     <th>Sexo</th>
     <th>Endereço</th>
+    <th>Ações</th>
   </tr>
   <% users.forEach(user => { %>
   <tr>
@@ -12,6 +13,12 @@
     <td><%= user.idade %></td>
     <td><%= user.sexo %></td>
     <td><%= user.endereco %></td>
+    <td>
+      <a href="./users/<%=user.id%>">Editar</a>
+      <form method="POST" action="/users/<%= user.id %>?_method=DELETE">
+        <button type="submit">Excluir usuário</button>
+      </form>
+    </td>
   </tr>
   <% }) %>
 </table>
